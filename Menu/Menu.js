@@ -34,7 +34,7 @@ let menuItems = [
   
 */
 
-function menuCompOne(items) {
+function menuComp(items) {
   const divMenu = document.createElement("div");
   divMenu.classList.add("menu");
 
@@ -47,7 +47,19 @@ function menuCompOne(items) {
     uList.appendChild(liList);
   });
 
-  console.log(divMenu)
+  return divMenu;
 }
 
-menuCompOne(menuItems);
+const finalize = menuComp(menuItems);
+// menuDom2.appendChild(menuComp(menuItems));
+
+const menuDom = document.querySelector('.menu-button');
+    menuDom.addEventListener('click', ()=>{
+    finalize.classList.toggle('menu--open');
+
+    // console.log('click');
+  });
+
+const menuDom2 = document.querySelector('body');
+
+menuDom2.appendChild(finalize);
