@@ -135,7 +135,7 @@ parThree.textContent = object.thirdParagraph;
 
 const spanVar = document.createElement('span');
 spanVar.classList.add("expandButton");
-spanVar.textContent = 'Open Me';
+spanVar.textContent = ('Open Me');
 spanVar.addEventListener('click', () =>{
   article.classList.toggle('article-open');
 })
@@ -152,7 +152,7 @@ return article;
 };
 
 wrapper = document.querySelector(".articles");
-  
+
 data.map(data => {
   return wrapper.appendChild(divComp(data))
 });
