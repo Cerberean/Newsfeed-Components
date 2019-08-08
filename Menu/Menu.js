@@ -41,11 +41,13 @@ function menuCompOne(items) {
   const uList = document.createElement('ul');
   divMenu.appendChild(uList);
 
-  items.array.forEach(element => {
+  items.forEach(element => {
     const liList = document.createElement('li');
-    liList.style.textContent = element;
+    liList.textContent = element;
+    uList.appendChild(liList);
   });
 
+  console.log(divMenu)
 }
 
 menuCompOne(menuItems);
