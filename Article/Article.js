@@ -112,3 +112,47 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
 */
+
+function divComp(object){
+  const article = document.createElement('div');
+  article.classList.add('article');
+
+const h2Tag = document.createElement('h2');
+h2Tag.textContent = object.title; 
+
+const date = document.createElement('p');
+date.classList.add('date'); 
+date.textContent = object.date;
+
+const parOne = document.createElement('p');
+parOne.textContent = object.firstParagraph;
+
+const parTwo = document.createElement('p');
+parTwo.textContent = object.secondParagraph;
+
+const parThree = document.createElement('p');
+parThree.textContent = object.thirdParagraph;
+
+const spanVar = document.createElement('span');
+spanVar.classList.add("expandButton");
+spanVar.textContent = ('Open Me');
+spanVar.addEventListener('click', () =>{
+  article.classList.toggle('article-open');
+})
+
+article.appendChild(h2Tag);
+article.appendChild(date);
+article.appendChild(parOne);
+article.appendChild(parTwo);
+article.appendChild(parThree);
+article.appendChild(spanVar);
+console.log(article);
+return article;
+
+};
+
+wrapper = document.querySelector(".articles");
+
+data.map(data => {
+  return wrapper.appendChild(divComp(data))
+});
